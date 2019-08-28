@@ -11,6 +11,28 @@ public class MtShopCarBean {
 	private int carType;//购物车状态
 	private String shopCarId;//购物车id
 	
+	@Override
+	public String toString() {
+		return "MtShopCarBean [userId=" + userId + ", userNmae=" + userNmae + ", storeId=" + storeId + ", storeName="
+				+ storeName + ", goodsId=" + goodsId + ", goodsName=" + goodsName + ", goodsNum=" + goodsNum
+				+ ", carType=" + carType + ", shopCarId=" + shopCarId + "]";
+	}
+	public MtShopCarBean() {
+		super();
+	}
+	public MtShopCarBean(int userId, String userNmae, int storeId, String storeName, int goodsId, String goodsName,
+			int goodsNum, int carType, String shopCarId) {
+		super();
+		this.userId = userId;
+		this.userNmae = userNmae;
+		this.storeId = storeId;
+		this.storeName = storeName;
+		this.goodsId = goodsId;
+		this.goodsName = goodsName;
+		this.goodsNum = goodsNum;
+		this.carType = carType;
+		this.shopCarId = shopCarId;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -53,25 +75,17 @@ public class MtShopCarBean {
 	public void setGoodsNum(int goodsNum) {
 		this.goodsNum = goodsNum;
 	}
-	
-	public MtShopCarBean() {
-		super();
+	public int getCarType() {
+		return carType;
 	}
-	public MtShopCarBean(int userId, String userNmae, int storeId, String storeName, int goodsId, String goodsName,
-			int goodsNum) {
-		super();
-		this.userId = userId;
-		this.userNmae = userNmae;
-		this.storeId = storeId;
-		this.storeName = storeName;
-		this.goodsId = goodsId;
-		this.goodsName = goodsName;
-		this.goodsNum = goodsNum;
+	public void setCarType(int carType) {
+		this.carType = carType;
 	}
-	@Override
-	public String toString() {
-		return "MtShopCarBean [userId=" + userId + ", userNmae=" + userNmae + ", storeId=" + storeId + ", storeName="
-				+ storeName + ", goodsId=" + goodsId + ", goodsName=" + goodsName + ", goodsNum=" + goodsNum + "]";
+	public String getShopCarId() {
+		return shopCarId;
+	}
+	public void setShopCarId(String shopCarId) {
+		this.shopCarId = shopCarId;
 	}
 	
 	
