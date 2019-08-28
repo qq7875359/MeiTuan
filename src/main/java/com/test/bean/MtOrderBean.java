@@ -19,19 +19,12 @@ public class MtOrderBean {
 	private Date orderTime;//		下单时间
 	private List<MtShopCarBean> goodsList;//商品
 	private int paytype;//订单状态
-	@Override
-	public String toString() {
-		return "MtOrderBean [orderId=" + orderId + ", orderRemark=" + orderRemark + ", areaId=" + areaId + ", city="
-				+ city + ", area=" + area + ", remark=" + remark + ", storeId=" + storeId + ", sorteName=" + sorteName
-				+ ", payMoney=" + payMoney + ", spayMoney=" + spayMoney + ", userId=" + userId + ", userName="
-				+ userName + ", orderTime=" + orderTime + ", goodsList=" + goodsList + "]";
-	}
 	public MtOrderBean() {
 		super();
 	}
 	public MtOrderBean(int orderId, String orderRemark, int areaId, String city, String area, String remark,
 			int storeId, String sorteName, String payMoney, String spayMoney, int userId, String userName,
-			Date orderTime, List<MtShopCarBean> goodsList) {
+			Date orderTime, List<MtShopCarBean> goodsList, int paytype) {
 		super();
 		this.orderId = orderId;
 		this.orderRemark = orderRemark;
@@ -47,6 +40,7 @@ public class MtOrderBean {
 		this.userName = userName;
 		this.orderTime = orderTime;
 		this.goodsList = goodsList;
+		this.paytype = paytype;
 	}
 	public int getOrderId() {
 		return orderId;
@@ -132,6 +126,18 @@ public class MtOrderBean {
 	public void setGoodsList(List<MtShopCarBean> goodsList) {
 		this.goodsList = goodsList;
 	}
-	
+	public int getPaytype() {
+		return paytype;
+	}
+	public void setPaytype(int paytype) {
+		this.paytype = paytype;
+	}
+	@Override
+	public String toString() {
+		return "MtOrderBean [orderId=" + orderId + ", orderRemark=" + orderRemark + ", areaId=" + areaId + ", city="
+				+ city + ", area=" + area + ", remark=" + remark + ", storeId=" + storeId + ", sorteName=" + sorteName
+				+ ", payMoney=" + payMoney + ", spayMoney=" + spayMoney + ", userId=" + userId + ", userName="
+				+ userName + ", orderTime=" + orderTime + ", goodsList=" + goodsList + ", paytype=" + paytype + "]";
+	}
 
 }
