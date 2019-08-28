@@ -313,6 +313,13 @@
 		    <artifactId>commons-fileupload</artifactId>
 		    <version>${commons-fileupload.version}</version>
 		</dependency>
+		
+		<dependency>
+             <groupId>commons-collections</groupId>
+             <artifactId>commons-collections</artifactId>
+             <version>3.2.1</version>
+         </dependency>
+		
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
@@ -338,6 +345,9 @@
 			<artifactId>jackson-core</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		
+		
+		
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
