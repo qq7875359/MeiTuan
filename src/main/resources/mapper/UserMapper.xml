@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.test.dao.LoginDao">
+	<!-- column数据库 -->
+	<resultMap type="com.test.bean.UserBean" id="adMap">
+		<id column="userId" property="userId"/>
+		<result column="userName" property="userName" jdbcType="VARCHAR"/>
+		<result column="loginPwd" property="loginPwd"/>
+		<result column="loginName" property="loginName"/>
+	</resultMap>
+	
+	<select id="login"  parameterType="java.util.Map" resultMap="adMap">
+		select * from users where loginName=#{loginName} and loginPwd = #{loginPwd};
+	</select>
+	
+	<select id="selectAll"   resultMap="adMap">
+		select * from users 
+	</select>
+</mapper>
