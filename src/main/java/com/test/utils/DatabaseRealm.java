@@ -32,7 +32,6 @@ public class DatabaseRealm extends AuthorizingRealm {
 		String password= new String( t.getPassword());
 		System.out.println(userName +"11------"+password);
 		List<UserBean> list = loginService.login(userName, password);
-		List<UserBean> listTest = loginService.selectAll();
 		//认证信息里存放账号密码, getName() 是当前Realm的继承方法,通常返回当前类名 :databaseRealm
 		if(list.size()<=0) 
 			throw new AuthenticationException();

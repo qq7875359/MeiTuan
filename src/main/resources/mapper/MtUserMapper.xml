@@ -17,24 +17,53 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="balance" property="balance"/>
 	</resultMap>
 	
-	<select id="getOneByName"  parameterType="java.util.Map" resultMap="adMap">
-		select * from users where loginName=#{loginName} and loginPwd = #{loginPwd};
+	<select id="getOneById" parameterType="java.lang.Integer"  resultMap="userBean"  >
+		select * from users where userid=#{userId}
 	</select>
 	
-	<select id="getOneById"   resultMap="adMap">
+	<select id="getUser"   resultMap="userBean">
 		select * from users 
 	</select>
 	
-	<select id="getUser"   resultMap="adMap">
-		select * from users 
-	</select>
-	
-	<insert id="insetOne">
-	
+	<insert id="insetOne" parameterType ="com.test.bean.MtUserBean">
+		insert into mt_user (
+			username,
+			tel,
+			city,
+			loginname,
+			loginpwd,
+			paypwd,
+			balance
+		)
+		values(
+			#{userName,jdbcType=VARCHAR},#{tel,jdbcType=VARCHAR},#{city,jdbcType=VARCHAR},
+			#{loginname,jdbcType=VARCHAR},#{loginpwd,jdbcType=VARCHAR},#{payPwd,jdbcType=VARCHAR},#{balance,jdbcType=VARCHAR}
+		)
 	</insert>
 	
-	<update id="updateOne">
-		
+	<update id="updateOne" parameterType ="com.test.bean.MtUserBean">
+		update mt_user  
+		<trim prefix="SET" suffixOverrides=",">
+		 <if test="username!=null">
+		 	username=#{userName,jdbcType=VARCHAR},
+		 </if>
+		 <if test="tel != null">
+		 	username=#{tel,jdbcType=VARCHAR},
+		 </if>
+		 <if test="city !=null">
+		 	username=#{city,jdbcType=VARCHAR},
+		 </if>
+		 <if test=" loginpwd !=null">
+		 	username=#{loginpwd,jdbcType=VARCHAR},
+		 </if>
+		 <if test="payPwd !=null">
+		 	username=#{payPwd,jdbcType=VARCHAR},
+		 </if>
+		 <if test="balance !=null">
+		 	balance=#{payPwd,jdbcType=VARCHAR},
+		 </if>
+		 </trim>
+		 where userid=#{id}
 	</update>
 	
 </mapper>

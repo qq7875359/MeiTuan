@@ -5,12 +5,6 @@ import java.util.Map;
 
 public interface MtUserDao {
 	/**
-	 * 通过登录名获取用户
-	 * @param loginName
-	 * @return
-	 */
-	public  MtUserDao getOneByName(String loginName);
-	/**
 	 * 通过id获取用户
 	 * @param userId
 	 * @return
